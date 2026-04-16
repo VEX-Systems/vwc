@@ -64,7 +64,7 @@ Grab `VolumeWheelControl.exe` from the [Releases](../../releases) page. Single-f
 Requires Python 3.10 or newer on Windows 10 / 11.
 
 ```bash
-git clone https://github.com/kubapelc/VolumeWheelControl.git
+git clone https://github.com/VEX-Systems/vwc.git
 cd VolumeWheelControl
 python -m pip install -e .
 python -m volume_wheel_control

@@ -1,3 +1,7 @@
+<p align="center">
+   <img width="150" src="https://sc.vex.systems/branding/vex_n.png" />
+</p>
+
 <h1 align="center">Volume Wheel Control</h1>
 
 <p align="center">

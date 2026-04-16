@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "volume-wheel-control"
+version = "0.1.0"
+description = "Programmable macros for keyboard volume knobs on Windows"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [
+    { name = "Jakub Pelc", email = "jakub.pelc@vex.systems" },
+]
+keywords = ["volume", "knob", "rotary", "keyboard", "macro", "windows"]
+classifiers = [
+    "Environment :: Win32 (MS Windows)",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "PyQt6>=6.6",
+    "PyQt6-Fluent-Widgets>=1.5",
+    "pywin32>=306",
+    "psutil>=5.9",
+    "pydantic>=2.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "pytest-qt>=4.4",
+    "pytest-mock>=3.12",
+    "ruff>=0.4",
+    "mypy>=1.8",
+    "nuitka>=2.4",
+]
+
+[project.scripts]
+volume-wheel-control = "volume_wheel_control.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+volume_wheel_control = ["../resources/**/*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "SIM", "RUF"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"

@@ -1,0 +1,13 @@
+from __future__ import annotations
+
+from typing import Callable, Protocol
+
+
+class TimerHandle(Protocol):
+    def start(self, ms: int) -> None: ...
+    def stop(self) -> None: ...
+    def is_active(self) -> bool: ...
+
+
+class TimerFactory(Protocol):
+    def create(self, callback: Callable[[], None]) -> TimerHandle: ...
